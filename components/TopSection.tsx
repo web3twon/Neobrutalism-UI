@@ -139,7 +139,7 @@ const TopSection: React.FC<TopSectionProps> = ({
                           className="w-full h-full object-contain"
                           onError={(e) => {
                             e.currentTarget.onerror = null;
-                            e.currentTarget.src = '/images/default-token.png';
+                            e.currentTarget.src = '/Neobrutalism-UI/images/default-token.png';
                           }}
                         />
                       </div>
