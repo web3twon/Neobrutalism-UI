@@ -20,10 +20,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
-        run: npm run build
-
-      - name: Export static files
+      - name: Build and Export
         run: npm run export
 
       - name: Add .nojekyll file
@@ -34,4 +31,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
-          publish_branch: main
+          publish_branch: gh-pages  # Deploy to a branch named gh-pages
