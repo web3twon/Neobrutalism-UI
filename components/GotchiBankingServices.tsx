@@ -346,7 +346,7 @@ const GotchiBankingServices: React.FC<GotchiBankingServicesProps> = ({ isDarkMod
   };
 
   return (
-    <div className={cn("min-h-screen p-6", isDarkMode ? "bg-darkBg text-darkText" : "bg-bg text-text")}>
+    <div className={cn("min-h-screen p-4 md:p-6 overflow-x-hidden", isDarkMode ? "bg-darkBg text-darkText" : "bg-bg text-text")}>
       <TopSection
         contractAddress={CONTRACT_ADDRESS}
         network="Polygon Mainnet"

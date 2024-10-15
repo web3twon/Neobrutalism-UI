@@ -63,12 +63,15 @@ const TopSection: React.FC<TopSectionProps> = ({
   }, [toast.show]);
 
   return (
-    <div className={cn("space-y-4 relative")}>
-      <div className="absolute top-4 right-4">
+    <div className={cn("space-y-4 w-full")}>
+      <div className="relative">
+        <h1 className={cn("text-2xl md:text-4xl font-heading text-text dark:text-darkText text-center")}>
+          Aavegotchi Banking Services
+        </h1>
         <button
           onClick={toggleDarkMode}
           className={cn(
-            "p-2 rounded-full bg-main dark:bg-darkMain shadow-light hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
+            "absolute top-0 right-0 p-2 rounded-full bg-main dark:bg-darkMain shadow-light hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
           )}
           aria-label="Toggle Dark Mode"
         >
@@ -76,14 +79,12 @@ const TopSection: React.FC<TopSectionProps> = ({
         </button>
       </div>
 
-      <h1 className={cn("text-4xl font-heading text-text dark:text-darkText")}>Aavegotchi Banking Services</h1>
-
-      <div className={cn("bg-main dark:bg-darkMain p-4 border-4 border-border dark:border-darkBorder shadow-light rounded")}>
+      <div className={cn("bg-main dark:bg-darkMain p-4 border-2 sm:border-4 border-border dark:border-darkBorder shadow-light rounded")}>
         <p className="font-base text-text dark:text-darkText">Network: {network}</p>
         <p className="font-base text-text dark:text-darkText">Contract: {contractAddress}</p>
       </div>
 
-      <div className={cn("bg-mainAccent dark:bg-darkMainAccent p-4 border-4 border-border dark:border-darkBorder shadow-light rounded")}>
+      <div className={cn("bg-mainAccent dark:bg-darkMainAccent p-4 border-2 sm:border-4 border-border dark:border-darkBorder shadow-light rounded")}>
         {walletAddress ? (
           <p className="font-base text-text dark:text-darkText">
             Connected: {walletAddress.slice(0, 6)}...{walletAddress.slice(-4)}
@@ -91,7 +92,7 @@ const TopSection: React.FC<TopSectionProps> = ({
         ) : (
           <button
             className={cn(
-              "bg-main dark:bg-darkMain px-4 py-2 font-base text-text dark:text-darkText border-4 border-border dark:border-darkBorder shadow-light hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all rounded"
+              "bg-main dark:bg-darkMain px-4 py-2 font-base text-text dark:text-darkText border-2 sm:border-4 border-border dark:border-darkBorder shadow-light hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all rounded"
             )}
             onClick={onConnectWallet}
           >
@@ -100,17 +101,17 @@ const TopSection: React.FC<TopSectionProps> = ({
         )}
       </div>
 
-      <div className={cn("bg-main dark:bg-darkMain p-4 border-4 border-border dark:border-darkBorder shadow-light rounded")}>
-        <h2 className={cn("text-2xl font-heading mb-4 text-text dark:text-darkText")}>Aavegotchi Tokens</h2>
+      <div className={cn("bg-main dark:bg-darkMain p-4 border-2 sm:border-4 border-border dark:border-darkBorder shadow-light rounded")}>
+        <h2 className={cn("text-xl md:text-2xl font-heading mb-4 text-text dark:text-darkText")}>Aavegotchi Tokens</h2>
         <div className="overflow-x-auto">
-          <table className={cn("w-full border-collapse border-4 border-border dark:border-darkBorder")}>
+          <table className={cn("w-full border-collapse border-2 sm:border-4 border-border dark:border-darkBorder")}>
             <thead>
               <tr className="bg-mainAccent dark:bg-darkMainAccent">
-                <th className="border-4 border-border dark:border-darkBorder p-2 font-base text-text dark:text-darkText">TOKEN ID</th>
-                <th className="border-4 border-border dark:border-darkBorder p-2 font-base text-text dark:text-darkText">NAME</th>
-                <th className="border-4 border-border dark:border-darkBorder p-2 font-base text-text dark:text-darkText">ESCROW WALLET</th>
-                <th className="border-4 border-border dark:border-darkBorder p-2 font-base text-text dark:text-darkText">
-                  <div className="flex items-center">
+                <th className="border-2 sm:border-4 border-border dark:border-darkBorder p-2 font-base text-text dark:text-darkText">TOKEN ID</th>
+                <th className="border-2 sm:border-4 border-border dark:border-darkBorder p-2 font-base text-text dark:text-darkText">NAME</th>
+                <th className="border-2 sm:border-4 border-border dark:border-darkBorder p-2 font-base text-text dark:text-darkText">ESCROW WALLET</th>
+                <th className="border-2 sm:border-4 border-border dark:border-darkBorder p-2 font-base text-text dark:text-darkText">
+                  <div className="flex items-center justify-center">
                     <span>
                       {isCustomToken && customTokenSymbol ? customTokenSymbol : 'GHST'} BALANCE
                     </span>
@@ -129,17 +130,17 @@ const TopSection: React.FC<TopSectionProps> = ({
                     )}
                   </div>
                 </th>
-                <th className="border-4 border-border dark:border-darkBorder p-2 font-base text-text dark:text-darkText">OWNERSHIP</th>
+                <th className="border-2 sm:border-4 border-border dark:border-darkBorder p-2 font-base text-text dark:text-darkText">OWNERSHIP</th>
               </tr>
             </thead>
             <tbody>
               {aavegotchis.map((gotchi, index) => (
                 <tr key={gotchi.tokenId} className={index % 2 === 0 ? "bg-bg dark:bg-darkBg" : "bg-main dark:bg-darkMain"}>
-                  <td className="border-4 border-border dark:border-darkBorder p-2 font-base text-text dark:text-darkText">{gotchi.tokenId}</td>
-                  <td className="border-4 border-border dark:border-darkBorder p-2 font-base text-text dark:text-darkText">
+                  <td className="border-2 sm:border-4 border-border dark:border-darkBorder p-2 font-base text-text dark:text-darkText">{gotchi.tokenId}</td>
+                  <td className="border-2 sm:border-4 border-border dark:border-darkBorder p-2 font-base text-text dark:text-darkText">
                     {gotchi.name || `Aavegotchi #${gotchi.tokenId}`}
                   </td>
-                  <td className="border-4 border-border dark:border-darkBorder p-2 font-base text-text dark:text-darkText">
+                  <td className="border-2 sm:border-4 border-border dark:border-darkBorder p-2 font-base text-text dark:text-darkText">
                     {gotchi.escrowWallet.slice(0, 6)}...{gotchi.escrowWallet.slice(-4)}
                     <button
                       onClick={() => copyToClipboard(gotchi.escrowWallet)}
@@ -150,12 +151,12 @@ const TopSection: React.FC<TopSectionProps> = ({
                       Copy
                     </button>
                   </td>
-                  <td className="border-4 border-border dark:border-darkBorder p-2 font-base text-text dark:text-darkText">
+                  <td className="border-2 sm:border-4 border-border dark:border-darkBorder p-2 font-base text-text dark:text-darkText">
                     {formatNumberWithCommas(
                       parseFloat(isCustomToken ? gotchi.customTokenBalance || '0' : gotchi.ghstBalance).toFixed(4)
                     )}
                   </td>
-                  <td className="border-4 border-border dark:border-darkBorder p-2 font-base text-text dark:text-darkText">
+                  <td className="border-2 sm:border-4 border-border dark:border-darkBorder p-2 font-base text-text dark:text-darkText">
                     <span
                       className={cn(
                         "px-2 py-1 rounded",
