@@ -1,0 +1,113 @@
+[33mcommit 7b6b3b792608cf192644ebbe9f1db0cc70ffde3c[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: web3twon <web3twon@gmail.com>
+Date:   Mon Oct 14 20:27:13 2024 -0400
+
+    Delete index.html
+
+[33mcommit ae98323964506794e8b5113368eb0f5029f1bac8[m
+Author: web3twon <web3twon@gmail.com>
+Date:   Mon Oct 14 20:26:55 2024 -0400
+
+    Delete 404.html
+
+[33mcommit 0cd48697e498d1a0e1bc17b65c3d26496306eddb[m
+Author: web3twon <web3twon@gmail.com>
+Date:   Mon Oct 14 20:26:48 2024 -0400
+
+    Delete .nojekyll
+
+[33mcommit 1e82f4ff6df1efa744fefa23352f628c91a5bea7[m
+Author: web3twon <web3twon@gmail.com>
+Date:   Mon Oct 14 20:26:33 2024 -0400
+
+    Delete _next/static directory
+
+[33mcommit b8bead6fab01daf97cdbd335c749a59e6b31c6a9[m
+Author: web3twon <web3twon@gmail.com>
+Date:   Mon Oct 14 20:26:27 2024 -0400
+
+    Delete .github/workflows directory
+
+[33mcommit 6e1c7cf33c60217458daf56f11203b480986ac9a[m
+Author: web3twon <web3twon@gmail.com>
+Date:   Mon Oct 14 20:24:42 2024 -0400
+
+    Update deploy.yml
+
+[33mcommit 5f7616aa1d89655aad3097e19daa4716a6c5f1d2[m
+Author: web3twon <web3twon@gmail.com>
+Date:   Tue Oct 15 00:20:48 2024 +0000
+
+    Deploying to main from @ web3twon/Neobrutalism-UI@94cb2bbb037be6b117136e9841d6fc91e2300332 🚀
+
+[33mcommit 94cb2bbb037be6b117136e9841d6fc91e2300332[m
+Author: web3twon <web3twon@gmail.com>
+Date:   Mon Oct 14 20:20:13 2024 -0400
+
+    Update deploy.yml
+
+[33mcommit 01f0d9ccd67c6a9a0055350191065cb75b00d6be[m
+Author: web3twon <web3twon@gmail.com>
+Date:   Mon Oct 14 20:12:41 2024 -0400
+
+    Update README.md
+
+[33mcommit 436fdba5eea60cb39f537390322b50a93d2e7af9[m
+Author: web3twon <web3twon@gmail.com>
+Date:   Mon Oct 14 20:07:40 2024 -0400
+
+    Update tsconfig.json
+
+[33mcommit a70b0a945d09b1b8b5354b2e955cc9e52c6712c2[m
+Author: web3twon <web3twon@gmail.com>
+Date:   Mon Oct 14 20:04:16 2024 -0400
+
+    Add files via upload
+
+[33mcommit caa14d1667c55306f2cdfabf7e18ae460938fbbd[m
+Author: web3twon <web3twon@gmail.com>
+Date:   Mon Oct 14 20:03:36 2024 -0400
+
+    Add files via upload
+
+[33mcommit 52ea9e9bf7322c437884280e181b3af55de7a55f[m
+Author: web3twon <web3twon@gmail.com>
+Date:   Mon Oct 14 20:01:02 2024 -0400
+
+    Add files via upload
+
+[33mcommit f71173b3ef3459d0354ecb373ae1bcb35d7aeef7[m
+Author: web3twon <web3twon@gmail.com>
+Date:   Mon Oct 14 19:59:19 2024 -0400
+
+    Create deploy.yml
+
+[33mcommit 18fa1eaf6c8283db4515a5e2ab0ad24bda93ea55[m
+Author: web3twon <web3twon@gmail.com>
+Date:   Mon Oct 14 19:53:55 2024 -0400
+
+    Update package.json
+
+[33mcommit 699f13ac913708b85e395f8cfc8fd96533347a0f[m
+Author: web3twon <web3twon@gmail.com>
+Date:   Mon Oct 14 19:51:25 2024 -0400
+
+    Update next.config.js
+
+[33mcommit 258f104cf3938839ea8dfc15f077407b6251f0c4[m
+Author: web3twon <web3twon@gmail.com>
+Date:   Mon Oct 14 19:50:06 2024 -0400
+
+    Add files via upload
+
+[33mcommit 4b57af1b4b8933bb049e60d13216cae296f53e01[m
+Author: web3twon <web3twon@gmail.com>
+Date:   Mon Oct 14 19:48:04 2024 -0400
+
+    Delete Test
+
+[33mcommit 2dada4fab1fa05c09b0dbd80ea967fc86d49e799[m
+Author: web3twon <web3twon@gmail.com>
+Date:   Mon Oct 14 19:47:35 2024 -0400
+
+    Create Test
