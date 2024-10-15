@@ -1,0 +1,22 @@
+/* styles/globals.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Apply global styles to <html> and <body> */
+html, body {
+  @apply bg-bg dark:bg-darkBg text-text dark:text-darkText min-h-screen;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Ensure the main App container spans the full viewport height and centers text */
+.App {
+  @apply text-center min-h-screen flex flex-col;
+}
+/* Removes white border around token images */
+.object-contain {
+border-radius: 50%;
+}
