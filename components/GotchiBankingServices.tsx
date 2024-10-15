@@ -28,7 +28,7 @@ const GotchiBankingServices: React.FC<GotchiBankingServicesProps> = ({ isDarkMod
   const [customTokenSymbol, setCustomTokenSymbol] = useState<string>('GHST');
   const [isCustomToken, setIsCustomToken] = useState(false);
   const [customTokenAddress, setCustomTokenAddress] = useState('');
-  const [tokenInfo, setTokenInfo] = useState<TokenInfo>({ symbol: 'GHST', image: '/images/default-token.png' });
+  const [tokenInfo, setTokenInfo] = useState<TokenInfo>({ symbol: 'GHST', image: '/Neobrutalism-UI/images/default-token.png' });
   const [tokenOption, setTokenOption] = useState('GHST');
   const [tokenDecimals, setTokenDecimals] = useState<number>(18);
 
