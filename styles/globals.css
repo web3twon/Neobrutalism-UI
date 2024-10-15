@@ -19,5 +19,5 @@ html, body {
 
 /* Removes white border around token images */
 .object-contain {
-  border-radius: 50%;
+  border-radius: 100%;
 }
