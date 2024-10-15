@@ -64,27 +64,43 @@ const TopSection: React.FC<TopSectionProps> = ({
 
   return (
     <div className={cn("space-y-4 w-full")}>
-      <div className="relative">
-        <h1 className={cn("text-2xl md:text-4xl font-heading text-text dark:text-darkText text-center")}>
+      <div className="relative flex items-center justify-center">
+        <h1 className={cn("text-2xl md:text-4xl font-heading text-text dark:text-darkText text-center px-4")}>
           Aavegotchi Banking Services
         </h1>
         <button
           onClick={toggleDarkMode}
           className={cn(
-            "absolute top-0 right-0 p-2 rounded-full bg-main dark:bg-darkMain shadow-light hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
+            "absolute right-0 p-2 rounded-full bg-main dark:bg-darkMain shadow-light hover:shadow-none transition-all mr-0"
           )}
           aria-label="Toggle Dark Mode"
         >
-          {isDarkMode ? <Sun className="w-6 h-6 text-yellow-400" /> : <Moon className="w-6 h-6 text-gray-800" />}
+          {isDarkMode ? (
+            <Sun className="w-6 h-6 text-yellow-400" />
+          ) : (
+            <Moon className="w-6 h-6 text-gray-800" />
+          )}
         </button>
       </div>
 
-      <div className={cn("bg-main dark:bg-darkMain p-4 border-2 sm:border-4 border-border dark:border-darkBorder shadow-light rounded")}>
-        <p className="font-base text-text dark:text-darkText">Network: {network}</p>
-        <p className="font-base text-text dark:text-darkText">Contract: {contractAddress}</p>
+      <div
+        className={cn(
+          "bg-main dark:bg-darkMain p-4 border-2 sm:border-4 border-border dark:border-darkBorder shadow-light rounded"
+        )}
+      >
+        <p className="font-base text-text dark:text-darkText break-words">
+          Network: {network}
+        </p>
+        <p className="font-base text-text dark:text-darkText break-all">
+          Contract: {contractAddress}
+        </p>
       </div>
 
-      <div className={cn("bg-mainAccent dark:bg-darkMainAccent p-4 border-2 sm:border-4 border-border dark:border-darkBorder shadow-light rounded")}>
+      <div
+        className={cn(
+          "bg-mainAccent dark:bg-darkMainAccent p-4 border-2 sm:border-4 border-border dark:border-darkBorder shadow-light rounded"
+        )}
+      >
         {walletAddress ? (
           <p className="font-base text-text dark:text-darkText">
             Connected: {walletAddress.slice(0, 6)}...{walletAddress.slice(-4)}
@@ -92,7 +108,7 @@ const TopSection: React.FC<TopSectionProps> = ({
         ) : (
           <button
             className={cn(
-              "bg-main dark:bg-darkMain px-4 py-2 font-base text-text dark:text-darkText border-2 sm:border-4 border-border dark:border-darkBorder shadow-light hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all rounded"
+              "bg-main dark:bg-darkMain px-4 py-2 font-base text-text dark:text-darkText border-2 sm:border-4 border-border dark:border-darkBorder shadow-light hover:shadow-none transition-all rounded"
             )}
             onClick={onConnectWallet}
           >
@@ -123,7 +139,7 @@ const TopSection: React.FC<TopSectionProps> = ({
                           className="w-full h-full object-contain"
                           onError={(e) => {
                             e.currentTarget.onerror = null;
-                            e.currentTarget.src = '/Neobrutalism-UI/images/default-token.png';
+                            e.currentTarget.src = '/images/default-token.png';
                           }}
                         />
                       </div>
@@ -145,7 +161,7 @@ const TopSection: React.FC<TopSectionProps> = ({
                     <button
                       onClick={() => copyToClipboard(gotchi.escrowWallet)}
                       className={cn(
-                        "ml-2 bg-mainAccent dark:bg-darkMainAccent px-2 py-1 font-base text-text dark:text-darkText border-2 border-border dark:border-darkBorder shadow-light hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all rounded"
+                        "ml-2 bg-mainAccent dark:bg-darkMainAccent px-2 py-1 font-base text-text dark:text-darkText border-2 border-border dark:border-darkBorder shadow-light hover:shadow-none transition-all rounded"
                       )}
                     >
                       Copy
