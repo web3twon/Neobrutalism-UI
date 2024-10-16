@@ -71,7 +71,11 @@ const TopSection: React.FC<TopSectionProps> = ({
         <button
           onClick={toggleDarkMode}
           className={cn(
-            "absolute right-0 p-2 rounded-full bg-main dark:bg-darkMain shadow-light hover:shadow-none transition-all mr-0"
+            "absolute right-0 p-2 rounded-full bg-main dark:bg-darkMain mr-0",
+            "shadow-[4px_4px_0_0_theme(colors.border)]",
+            "hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]",
+            "active:shadow-none active:translate-x-[4px] active:translate-y-[4px]",
+            "transition-all duration-150"
           )}
           aria-label="Toggle Dark Mode"
         >
@@ -108,7 +112,7 @@ const TopSection: React.FC<TopSectionProps> = ({
         ) : (
           <button
             className={cn(
-              "bg-main dark:bg-darkMain px-4 py-2 font-base text-text dark:text-darkText border-2 sm:border-4 border-border dark:border-darkBorder shadow-light hover:shadow-none transition-all rounded"
+              "bg-mainAccent dark:bg-darkMainAccent px-4 py-2 font-base text-text dark:text-darkText border-4 border-border dark:border-darkBorder shadow-light hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all rounded"
             )}
             onClick={onConnectWallet}
           >
@@ -161,7 +165,12 @@ const TopSection: React.FC<TopSectionProps> = ({
                     <button
                       onClick={() => copyToClipboard(gotchi.escrowWallet)}
                       className={cn(
-                        "ml-2 bg-mainAccent dark:bg-darkMainAccent px-2 py-1 font-base text-text dark:text-darkText border-2 border-border dark:border-darkBorder shadow-light hover:shadow-none transition-all rounded"
+                        "ml-2 bg-mainAccent dark:bg-darkMainAccent px-2 py-1 font-base text-text dark:text-darkText",
+                        "border-2 border-border dark:border-darkBorder rounded",
+                        "shadow-[4px_4px_0_0_theme(colors.border)]",
+                        "hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]",
+                        "active:shadow-none active:translate-x-[4px] active:translate-y-[4px]",
+                        "transition-all duration-150"
                       )}
                     >
                       Copy
