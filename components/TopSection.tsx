@@ -17,6 +17,7 @@ interface TopSectionProps {
   tokenImage: string;
   isDarkMode: boolean;
   toggleDarkMode: () => void;
+  signer: ethers.Signer | null;
 }
 
 interface Aavegotchi {
