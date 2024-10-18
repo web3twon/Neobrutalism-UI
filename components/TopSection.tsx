@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { cn } from '../lib/utils';
 import { formatNumberWithCommas } from '../utils/formatters';
 import { Moon, Sun } from 'lucide-react';
+import AavegotchiThumbnail from './AavegotchiThumbnail';
 
 interface TopSectionProps {
   contractAddress: string;
@@ -16,6 +17,7 @@ interface TopSectionProps {
   tokenImage: string;
   isDarkMode: boolean;
   toggleDarkMode: () => void;
+  signer: ethers.Signer | null;
 }
 
 interface Aavegotchi {
@@ -38,8 +40,18 @@ const TopSection: React.FC<TopSectionProps> = ({
   tokenImage,
   isDarkMode,
   toggleDarkMode,
+  signer,
 }) => {
   const [toast, setToast] = useState({ show: false, message: '' });
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const isMobileView = windowWidth <= 830;
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard
@@ -127,7 +139,9 @@ const TopSection: React.FC<TopSectionProps> = ({
           <table className={cn("w-full border-collapse border-2 sm:border-4 border-border dark:border-darkBorder")}>
             <thead>
               <tr className="bg-mainAccent dark:bg-darkMainAccent">
-                <th className="border-2 sm:border-4 border-border dark:border-darkBorder p-2 font-base text-text dark:text-darkText">TOKEN ID</th>
+                <th className="border-2 sm:border-4 border-border dark:border-darkBorder p-2 font-base text-text dark:text-darkText">
+                  {isMobileView ? 'GOTCHI' : 'TOKEN ID'}
+                </th>
                 <th className="border-2 sm:border-4 border-border dark:border-darkBorder p-2 font-base text-text dark:text-darkText">NAME</th>
                 <th className="border-2 sm:border-4 border-border dark:border-darkBorder p-2 font-base text-text dark:text-darkText">ESCROW WALLET</th>
                 <th className="border-2 sm:border-4 border-border dark:border-darkBorder p-2 font-base text-text dark:text-darkText">
@@ -156,7 +170,16 @@ const TopSection: React.FC<TopSectionProps> = ({
             <tbody>
               {aavegotchis.map((gotchi, index) => (
                 <tr key={gotchi.tokenId} className={index % 2 === 0 ? "bg-bg dark:bg-darkBg" : "bg-main dark:bg-darkMain"}>
-                  <td className="border-2 sm:border-4 border-border dark:border-darkBorder p-2 font-base text-text dark:text-darkText">{gotchi.tokenId}</td>
+                  <td className="border-2 sm:border-4 border-border dark:border-darkBorder p-2 font-base text-text dark:text-darkText">
+                    <div className="flex items-center space-x-2">
+                      <AavegotchiThumbnail 
+                        tokenId={gotchi.tokenId} 
+                        signer={signer} 
+                        displayMode={isMobileView ? 'full' : 'thumbnail'} 
+                      />
+                      {!isMobileView && <span>{gotchi.tokenId}</span>}
+                    </div>
+                  </td>
                   <td className="border-2 sm:border-4 border-border dark:border-darkBorder p-2 font-base text-text dark:text-darkText">
                     {gotchi.name || `Aavegotchi #${gotchi.tokenId}`}
                   </td>

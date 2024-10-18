@@ -28,7 +28,7 @@ const GotchiBankingServices: React.FC<GotchiBankingServicesProps> = ({ isDarkMod
   const [customTokenSymbol, setCustomTokenSymbol] = useState<string>('GHST');
   const [isCustomToken, setIsCustomToken] = useState(false);
   const [customTokenAddress, setCustomTokenAddress] = useState('');
-  const [tokenInfo, setTokenInfo] = useState<TokenInfo>({ symbol: 'GHST', image: '/Neobrutalism-UI/images/default-token.png' });
+  const [tokenInfo, setTokenInfo] = useState<TokenInfo>({ symbol: 'GHST', image: '/images/default-token.png' });
   const [tokenOption, setTokenOption] = useState('GHST');
   const [tokenDecimals, setTokenDecimals] = useState<number>(18);
 
@@ -61,7 +61,6 @@ const GotchiBankingServices: React.FC<GotchiBankingServicesProps> = ({ isDarkMod
     },
     []
   );
-
   const fetchTokenInfo = useCallback(
     async (tokenAddress: string) => {
       try {
@@ -157,7 +156,6 @@ const GotchiBankingServices: React.FC<GotchiBankingServicesProps> = ({ isDarkMod
       }
     };
   }, [checkConnection]);
-
   const connectWallet = async () => {
     if (typeof window !== 'undefined' && window.ethereum) {
       try {
@@ -295,7 +293,6 @@ const GotchiBankingServices: React.FC<GotchiBankingServicesProps> = ({ isDarkMod
     setTokenDecimals(18);
     setCustomTokenAddress('');
   }, []);
-
   const handleWithdraw = useCallback(
     async (tokenAddress: string, selectedGotchis: string[], amount: string) => {
       if (!contract || !signer) {
@@ -344,7 +341,6 @@ const GotchiBankingServices: React.FC<GotchiBankingServicesProps> = ({ isDarkMod
     tokenOption,
     customTokenAddress,
   };
-
   return (
     <div className={cn("min-h-screen p-4 md:p-6 overflow-x-hidden", isDarkMode ? "bg-darkBg text-darkText" : "bg-bg text-text")}>
       <TopSection
@@ -358,6 +354,7 @@ const GotchiBankingServices: React.FC<GotchiBankingServicesProps> = ({ isDarkMod
         tokenImage={tokenInfo.image}
         isDarkMode={isDarkMode}
         toggleDarkMode={toggleDarkMode}
+        signer={signer}
       />
       <WithdrawalForm {...withdrawalFormProps} />
     </div>

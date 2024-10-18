@@ -180,3 +180,13 @@ export const ERC20_ABI = [
 ];
 
 export const AddressZero = ethers.ZeroAddress;
+
+export const AAVEGOTCHI_ABI = [
+  {
+    inputs: [{ internalType: 'uint256', name: '_tokenId', type: 'uint256' }],
+    name: 'getAavegotchiSvg',
+    outputs: [{ internalType: 'string', name: 'svg_', type: 'string' }],
+    stateMutability: 'view',
+    type: 'function',
+  },
+];
