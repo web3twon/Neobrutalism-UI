@@ -1,6 +1,7 @@
 // components/TopSection.tsx
 
 import React, { useState, useEffect } from 'react';
+import { ethers } from 'ethers'; // Add this import
 import { cn } from '../lib/utils';
 import { formatNumberWithCommas } from '../utils/formatters';
 import { Moon, Sun } from 'lucide-react';
